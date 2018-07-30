@@ -27,6 +27,7 @@ def task():
         innertext = browser.execute_script("return arguments[0].textContent", browser.find_element_by_id("footer"))
         split_text = innertext.split(" ")
         file_name = split_text[0]
+        print("Downloading " + file_name)
         update_folder(folder_path, file_name)
     browser.close()
 
