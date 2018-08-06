@@ -1,9 +1,12 @@
 from selenium import webdriver
-import os, shutil
+import os, shutil, json
 
-driver_path = r""
-folder_path = ""
-download_path = ""
+path_json = open("driver_path.json").read()
+path_data = json.loads(path_json)
+
+driver_path = path_data['driver_path']
+folder_path = path_data['folder_path']
+download_path = path_data['download_path']
 
 def update_folder(target_folder, filename):
     if not os.path.exists(folder_path):
